@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Channel9.Models.TVShow>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TVHost.HostName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVHost.HostName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

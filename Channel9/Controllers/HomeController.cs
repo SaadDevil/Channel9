@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Channel9.Controllers
-{
+{   [AllowAnonymous]
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()

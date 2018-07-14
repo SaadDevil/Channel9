@@ -54,15 +54,15 @@ namespace Channel9
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "410582129454756",
+               appSecret: "794aab5bf7457f9b9fc76c6d9e05239c");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "124942200070-q3loqd33qqs53dqmvik4ha27lkm7odia.apps.googleusercontent.com",
+                ClientSecret = "m6nyRnHmjtx9Rj99dKmIYXC5"
+            });
         }
     }
 }

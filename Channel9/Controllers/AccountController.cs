@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Channel9.Models;
+using Channel9.ViewModels;
 
 namespace Channel9.Controllers
 {
@@ -139,6 +140,8 @@ namespace Channel9.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+           
+          
             return View();
         }
 
@@ -149,9 +152,13 @@ namespace Channel9.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ApplicationDbContext db = new ApplicationDbContext();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,
+
+                    BirthDate = model.BirthDate,PhoneNumber = model.PhoneNumber,MembershipType =model.MembershipType
+     };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -167,6 +174,7 @@ namespace Channel9.Controllers
                 }
                 AddErrors(result);
             }
+           
 
             // If we got this far, something failed, redisplay form
             return View(model);

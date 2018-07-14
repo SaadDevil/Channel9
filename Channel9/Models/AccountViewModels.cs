@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Channel9.Models
 {
@@ -68,6 +70,8 @@ namespace Channel9.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Display(Name ="User Name")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -77,8 +81,24 @@ namespace Channel9.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0 : d}")]
+        [Display(Name ="Date Of Birth")]
+        public DateTime BirthDate { get; set; }
+        [Display(Name ="Membership")]
+        public string MembershipType { get; set; }
+        [Phone]
+        [MaxLength(11)]
+        public string PhoneNumber { get; set; }
+
+
+
+
+
+
+
     }
 
     public class ResetPasswordViewModel
@@ -96,7 +116,7 @@ namespace Channel9.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
