@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -256,6 +257,10 @@
     <Compile Include="Migrations\201807142023499_phoneNumber.Designer.cs">
       <DependentUpon>201807142023499_phoneNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807172022170_addName.cs" />
+    <Compile Include="Migrations\201807172022170_addName.Designer.cs">
+      <DependentUpon>201807172022170_addName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -304,6 +309,12 @@
     <Content Include="images\bg\pattern.png" />
     <Content Include="images\bg\single-celebrity-header.png" />
     <Content Include="images\bg\single-page-header.png" />
+    <Content Include="images\Categories\b.png" />
+    <Content Include="images\Categories\h.jpg" />
+    <Content Include="images\Categories\h.png" />
+    <Content Include="images\Categories\l.png" />
+    <Content Include="images\Categories\n.png" />
+    <Content Include="images\Categories\t.jpg" />
     <Content Include="images\celebrity\1.png" />
     <Content Include="images\celebrity\10.png" />
     <Content Include="images\celebrity\11.png" />
@@ -414,7 +425,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -443,6 +453,13 @@
     <Content Include="Views\TVShows\Details.cshtml" />
     <Content Include="Views\TVShows\Edit.cshtml" />
     <Content Include="Views\TVShows\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Movies\CategoryDetail.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -499,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807142023499_phoneNumber.resx">
       <DependentUpon>201807142023499_phoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807172022170_addName.resx">
+      <DependentUpon>201807172022170_addName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -89,13 +89,12 @@
 
                 @if (Request.IsAuthenticated)
                 {
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
-                        <li>@Html.ActionLink("TV Shows", "Index", "TVShows")</li>
-                        <li>@Html.ActionLink("Sports", "Index", "Sports")</li>
-                        <li><a href="news.html">News</a></li>
-                    </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>@Html.ActionLink("Movies", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("TV Shows", "Index", "TVShows")</li>
+                    <li>@Html.ActionLink("Sports", "Index", "Sports")</li>
+                </ul>
                 }
                
 
@@ -118,7 +117,7 @@
                         <div class="widget about-widget">
                             <div class="widget-inner">
                                 <a class="footer-logo" href="index.html">
-                                    <img src="images/template/logo-footer.png" alt="Footer logo">
+                                    <img src="~/images/template/logo-footer.png" alt="Footer logo">
                                 </a>
                                 <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, ducimus, atque. Praesentium suscipit provident explicabo dignissimos nostrum numquam deserunt earum accusantium et fugit.</p>
                                 <div class="footer-social">

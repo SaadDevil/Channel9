@@ -10,6 +10,26 @@ namespace Channel9.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0 : d}")]
+        [Display(Name = "Date Of Birth")]
+        public DateTime BirthDate { get; set; }
+        [Required]
+        [Display(Name = "Membership")]
+        public string MembershipType { get; set; }
+        [Required]
+        [Display(Name ="User Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Phone]
+        [MaxLength(11)]
+        [Display(Name = "Phone")]
+        public string PhoneNumber { get; set; }
+
+
+
     }
 
     public class ExternalLoginListViewModel
@@ -55,6 +75,7 @@ namespace Channel9.Models
         [EmailAddress]
         public string Email { get; set; }
 
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -70,8 +91,11 @@ namespace Channel9.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        [Display(Name ="User Name")]
+       
         public string UserName { get; set; }
+        [Required]
+        [Display(Name = "User Name")]
+        public string Name { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -83,14 +107,17 @@ namespace Channel9.Models
         [Display(Name = "Confirm password")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0 : d}")]
-        [Display(Name ="Date Of Birth")]
+        [Display(Name ="Birth Date")]
         public DateTime BirthDate { get; set; }
         [Display(Name ="Membership")]
         public string MembershipType { get; set; }
         [Phone]
+        [Required]
         [MaxLength(11)]
+        [Display(Name ="Phone")]
         public string PhoneNumber { get; set; }
 
 

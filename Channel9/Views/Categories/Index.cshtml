@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Channel9.Models.Category>
+
+<div class="section section-padding movie-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-xs-6">
+                <div class="section-header">
+                    <h2 class="section-title">Select Your favourite Film Industory</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="owl-carousel video-carousel owl-theme" id="video-carousel" style="opacity: 1; display: block;">
+                <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 4688px; left: 0px; display: block;">
+                      @foreach (var Categ in Model)
+                      {
+                         <div class="owl-item" style="width: 293px;">
+                            <div class="video-item">
+                                <div class="thumb-wrap">
+                                    @if (Categ.ID == 1)
+                                    {<img src="~/images/Categories/h.jpg" alt="Hollywood logo">}
+
+                                    @if (Categ.ID == 2)
+                                    {<img src="~/images/Categories/b.png" alt="Bollywood logo">}
+                                        @if (Categ.ID == 3)
+                                        { <img src="~/images/Categories/n.png" alt="Nollywood logo">}
+                                        @if (Categ.ID == 4)
+                                        { <img src="~/images/Categories/l.png" alt="Lollywood logo">}
+
+                                        </div>
+                                <div class="video-details">
+                                    <h4 class="video-title"><a href=@Url.Action("CategoryDetail", "Movies",new { id = Categ.ID})>@Categ.CategroyName</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                      }
+                        
+                       
+                    </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+        <br />
+        <br />
+

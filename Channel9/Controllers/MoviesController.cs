@@ -20,6 +20,11 @@ namespace Channel9.Controllers
             var movies = db.Movies.Include(m => m.Category).Include(m => m.Genre).Include(m => m.Hero);
             return View(movies.ToList());
         }
+        public ActionResult CategoryDetail(int id)
+        {
+            var movies = db.Movies.Include(m => m.Category).Include(m => m.Genre).Include(m => m.Hero).Where(e => e.CategoryID == id).ToList();
+            return View(movies);
+        }
 
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
